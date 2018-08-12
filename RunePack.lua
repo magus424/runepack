@@ -97,9 +97,7 @@ function RuneFrameC_OnLoad (self)
     end
 
     self:RegisterEvent("PLAYER_ENTERING_WORLD");
-    self:RegisterEvent("RUNE_TYPE_UPDATE");
     self:RegisterEvent("RUNE_POWER_UPDATE");
-    self:RegisterEvent("RUNE_REGEN_UPDATE");
     self:RegisterEvent("VARIABLES_LOADED");
     self:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED");
     
@@ -132,7 +130,7 @@ end
 
 
 function RuneFrameC_OnUpdate(self)
-    local power = UnitMana("player");
+    local power = UnitPower("player");
     if (power > 89) then
         runePowerStatusBarText:SetText(power);
         runePowerStatusBarText:SetTextColor(1,0,0); --red
@@ -157,10 +155,6 @@ end
 
 function RuneFrameC_OnEvent (self, event, ...)
     if (event == "PLAYER_ENTERING_WORLD") then
-        for rune in next, self.runes do
-            RuneButtonC_Update(self.runes[rune], rune);
-        end
-    elseif (event == "RUNE_TYPE_UPDATE") then
         for rune in next, self.runes do
             RuneButtonC_Update(self.runes[rune], rune);
         end
