@@ -67,7 +67,7 @@ function RuneButtonC_OnUpdate (self, elapsed)
     if (r) then
         self:SetAlpha(1);
         self:SetPoint("TOPLEFT", "RuneFrameC", "TOPLEFT", runeX[self:GetID()], runeY[self:GetID()]);
-    else
+    elseif duration ~= nil then
         local remain = (duration - GetTime() + start) / duration;
         if (remain < 0) then
             self:SetAlpha(1); 
