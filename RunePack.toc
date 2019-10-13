@@ -3,7 +3,7 @@
 ## Notes: Six pack shaped rune tracker heavily based on RuneHero.
 ## Author: Hrygar
 ## SavedVariables: RunePack_Saved
-## Version: 2.3
+## Version: 2.4
 
 RunePack.xml
 RunePack.lua
